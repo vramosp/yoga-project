@@ -1,0 +1,172 @@
+/* HOME */
+.visit-category{
+	width:180px;
+	height:150px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.visit-category.beginners{
+	background-image: url('../img/beginners.png');	
+}
+.visit-category.weightloss{
+	background-image: url('../img/weightloss.png');	
+}
+.visit-category.flexibility{
+	background-image: url('../img/flexibility.png');	
+}
+.visit-category.relaxation{
+	background-image: url('../img/relaxation.png');	
+}
+.title{
+	margin-left:10px;
+	height:150px;
+	width:30px;
+}
+.title.container{
+	background-color:black;
+	opacity:0.6;
+	margin-top:-150px;
+}
+.title.text{
+	margin-top:-145px;
+
+}
+.vertical-text{
+	color:#333;
+	border:0px solid red;
+	writing-mode:tb-rl;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	white-space:nowrap;
+	display:block;
+	bottom:0;
+	width:25px;
+	height:28px;
+	font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+	font-size:22px;
+	font-weight:normal;
+	text-shadow: 0px 0px 1px #333;
+}
+
+/* CATEGORIES */
+.thumb {
+	background-color:#dddddd;
+	padding:10px 0px;
+	color:#333;
+	font-size: 11px;
+	line-height: 15px;
+}
+.thumb.on{
+	background-color: #fffcc4;
+	padding:10px 0px;
+	color:#333;
+	font-size: 11px;
+	line-height: 15px;
+}
+.thumb-title{
+	font-weight: bold;
+	font-size: 13px;
+	color:#333;
+}
+.social{
+	width:160px;
+	height: 40px;
+	color:#333;
+	font-size: 13px;
+	text-align: center;
+	font-weight: bold;
+}
+.social.like{
+	background: url('../img/likes0.jpg') no-repeat;
+	margin-left: 0px;
+	padding-top:12px;
+}
+.social.view{
+	background: url('../img/views0.jpg') no-repeat;
+	margin-left: 10px;
+	padding-top:12px;
+}
+.social.comment{
+	background: url('../img/comments0.jpg') no-repeat;
+	margin-left: 10px;
+	padding-top:12px;
+}
+.social-text{
+	font-size:20px;
+	margin-top:15px;
+}
+.yoga-type{
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-left: -40px;
+	margin-top:-40px;
+	width:300px;
+	height:40px;
+	font-size:24px;
+	font-weight: bold;
+	color:white;
+	padding: 15px 0px 0px 0px;
+	text-align: center;
+}
+.yoga-type.beginner{
+	background-color: #ff9900;
+}
+.yoga-type.weightloss{
+	background-color: #cc33ff;
+}
+.yoga-type.flexibility{
+	background-color: #3399ff;
+}
+.yoga-type.relaxation{
+	background-color: #669900;
+}
+
+/* MARGINS */
+.mtop10{
+	margin-top:10px;
+}
+.mtop20{
+	margin-top:20px;
+}
+.mtop40{
+	margin-top: 40px;
+}
+.mbottom40{
+	margin-bottom:40px;
+}
+.mtop80{
+	margin-top:80px;
+}
+.mleftm5 {
+	margin-left: -5px;
+}
+.mleft60{
+	margin-left:60px;
+}
+.mleft80{
+	margin-left:80px;
+}
+
+/* GENERAL STYLES */
+.bg-grey{
+	background-color:#ccc;
+}
+.block-style{
+	background-color:#fff; 
+	padding:20px;
+}
+.block-style.grey{
+	background-color:#333; 
+}
+.align-right{
+	text-align:right;
+}
+.no-link{
+	text-decoration: none;
+	color:white;
+}
+a:hover{
+	text-decoration: none;
+	color:#999;
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Learn yoga at your own rythm</title>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="lib/yoga-project.css">
+ </head>
+ <body class="bg-grey">
+
+<div class="container">
+  <div class="block-style grey">
+    <h1 class="no-link">Learn yoga at your own rythm</h1>
+  </div>
+  <div class="block-style mtop20 mbottom40">
+    <div class="row">
+      <div class="span5" id="main-video">
+         <h2>Video of the day</h2>
+         <h4 class="mtop20"></h4>
+         <iframe src=""/></iframe>
+         <div class="mtop10"></div>
+      </div>
+      <div class="span6">
+        <div class="row mtop80" id="category">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="lib/youtube.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var categories = ['beginners','weightloss','flexibility','relaxation'];
+  //var elements = $('.vertical-text a');
+  for (var i = 0; i < categories.length; i++) {
+      generateCategory(categories[i], i);
+    }
+});
+
+function generateCategory(type, i){
+  var titleContainer = $('<div>').addClass('title container');
+  var categoryIcon = $('<div>').addClass('visit-category ' + type);
+  var containerLink = $('<a>').attr('href', type + '.html');
+  var wrap = $('<div>');
+  var titleText = $('<div>').addClass('title text');
+  var titleTextLink = $('<span>').addClass('vertical-text').append($('<a>').attr('href', type + '.html').addClass('no-link').text(type));
+  containerLink.append(categoryIcon).append(titleContainer);
+  titleText.append(titleTextLink);
+  wrap.append(containerLink).append(titleText);
+  var span3 = $('<div>').addClass('span3 mtop20');
+  if (i % 2 == 0) {
+    wrap.addClass('mleft80');
+  } else {
+    wrap.addClass('mleft60');
+  } 
+  span3.append(wrap);
+  $('#category').append(span3);
+}
+
+function paintCategory(type, i){
+  $($('.visit-category')[i]).addClass(type);
+  $($('.no-link')[i]).attr('href', type + '.html');
+  $($('.no-link')[i]).text(type);
+  $($('.category-icon')[i]).attr('href', type + '.html');
+}
+
+function mainVideo(video){
+  var videoDescription = $('#main-video').children('div');
+  videoDescription.append(video.description.substring(0,200)+'...');
+  var videoTitle = $('#main-video').children('h4');
+  videoTitle.append(video.title);
+  var videoEmbed = $('#main-video').children('iframe');
+  videoEmbed.attr('src', youtube.generateEmbedUrl(video.id));
+  videoEmbed.attr('width', 420);
+  videoEmbed.attr('height', 285);
+}
+
+$.ajax({type: "GET",
+  url: "https://gdata.youtube.com/feeds/api/videos?q=yoga&v=2&alt=jsonc&max-results=20&time=today",
+  dataType: "json",
+  success: function(data) {
+    var videos = data['data']['items'];
+    if (videos.length > 0) {
+      var randomVideo = Math.ceil(Math.random()*20);
+      mainVideo(videos[randomVideo]);
+    }
+ }
+});
+
+</script>
+</body>
+</html>
